@@ -7,7 +7,7 @@ from flaskr.db import get_db
 bp = Blueprint("movies", __name__)
 
 
-@bp.route("/")
+@bp.route("/movies")
 def index():
     db = get_db()
     movies = db.execute(
@@ -27,7 +27,8 @@ def index():
     #        .fetchone()
     #    )
 
-    if post is None:
-        abort(404, f"Post id {id} doesn't exist.")
 
-    return post
+#    if post is None:
+#       abort(404, f"Post id {id} doesn't exist.")
+
+#  return post
