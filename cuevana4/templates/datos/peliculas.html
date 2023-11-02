@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block header %}
+<h1>{% block title %}Pelicula{% endblock %}</h1>
+{% endblock %} {% block content %}
+<h2>{{ pelicula['title']}}</h2>
+<h3>Actores / Reparto :</h3>
+{% for a in actores %}
+
+<a href={{url_for('movies.index_un_actor', id = a ['actor_id'])}}>
+  <ul>
+  {{ a['first_name']}} {{ a['last_name'] }}
+</ul></a>
+
+{% endfor %} {% endblock %}

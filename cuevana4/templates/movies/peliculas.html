@@ -1,15 +1,14 @@
 {% extends 'base.html' %} {% block header %}
-<h1>{% block title %}Películas{% endblock %}</h1>
-{% endblock %} {% block content %} {% for film in film %}
-
-<article class="peliculas">
+<h1>{% block title %}Peliculas{% endblock %}</h1>
+{% endblock %} {% block content %} {% for film in films %}
+<article class="post">
   <header>
     <div>
-      <h1>{{ film['peliculas'] }}</h1>
+      <a href={{url_for('movies.index_una_pelicula', id = film ['film_id'])}}><h1>{{ film['title'] }}</h1></a>
     </div>
   </header>
-  <p class="body">{{ film['release_year'] }}, {{ film['rating']}}</p>
+  <p class="body">{{ film['release_year'] }}, {{ film['rating'] }}</p>
+  <h3> Descripción </h3>
   <p class="body">{{ film['description'] }}</p>
 </article>
-
 {% endfor %} {% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block header %}
+<h1>{% block title %}Lenguajes{% endblock %}</h1>
+{% endblock %} {% block content %} {% for l in langueges %}
+<article class="post">
+  <header>
+    <div>
+      <h1>{{ l['name'] }}</h1>
+    </div>
+  </header>
+</article>
+{% endfor %} {% endblock %}
