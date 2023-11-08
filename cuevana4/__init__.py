@@ -29,8 +29,13 @@ def create_app(test_config=None):
     def hello():
         return "Hello, World!"
 
-    from . import init_db
+    from cuevana4 import db
 
-    init_db.init_app(app)
+    db.init_app(app)
+
+    from . import movie
+
+    app.register_blueprint(movie.bp)
+    app.add_url_rule("/", endpoint="movie.index_films")
 
     return app
