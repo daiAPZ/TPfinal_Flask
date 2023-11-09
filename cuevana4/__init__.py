@@ -29,7 +29,7 @@ def create_app(test_config=None):
     def hello():
         return "Hello, World!"
 
-    from cuevana4 import db
+    from . import db
 
     db.init_app(app)
 
