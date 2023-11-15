@@ -4,7 +4,7 @@
 <article class="post">
   <header>
     <div>
-      <a href={{url_for('movie.index_una_pelicula', id = film ['film_id'])}}><h1>{{ film['title'] }}</h1></a>
+      <a href={{url_for('movie.pelicula', id = film ['film_id'])}}><h1>{{ film['title'] }}</h1></a>
     </div>
   </header>
   <p class="body">{{ film['release_year'] }}, {{ film['rating'] }}</p>
